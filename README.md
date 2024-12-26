@@ -28,7 +28,7 @@ pip install vizura
 ```python
 import vizura
 
-# Example usage of Vizura
+# Example usage of vizura
 data = ...  # Load your dataset
 vizura.numerical(data) # Generates a dashboard displaying summary statistics for numerical columns in the dataset.
 vizura.categorical(data) # Displays a dashboard of summary statistics for categorical columns.
