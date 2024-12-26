@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="Vizura",
-    version="0.1.11",
+    name="vizura",
+    version="0.1.12",
     packages=find_packages(),
     install_requires=[
         "dash",
