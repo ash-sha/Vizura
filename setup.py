@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="vizura",
-    version="0.1.12",
+    version="0.1.14",
     packages=find_packages(),
     install_requires=[
         "dash",
@@ -19,14 +19,6 @@ setup(
         "setuptools",
         "streamlit",
     ],
-    entry_points={
-        'console_scripts': [
-            'vizura-numerical=vizura.vizura:numerical',
-            'vizura-categorical=vizura.vizura:categorical',
-            'vizura-plot_correlation=vizura.vizura:plot_correlation',
-            'vizura-calculate_correlations=vizura.vizura:calculate_correlations',
-        ],
-    },
     author="Aswath Shakthi",
     author_email="aswathshakthi@outlook.com",
     description="Tool for Data Analysis",
