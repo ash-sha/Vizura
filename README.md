@@ -1,6 +1,6 @@
 # Vizura
 
-![alt text](/Users/aswathshakthi/PycharmProjects/MLOps/Vizura/vizura/logo.png)
+![alt text](logo.png)
 
 Vizura is a data analysis and visualization tool built with Python and Streamlit. It provides insights into datasets through summary statistics and interactive visualizations.
 
