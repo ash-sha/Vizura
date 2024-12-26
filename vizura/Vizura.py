@@ -20,6 +20,8 @@ import plotly.express as px
 def numerical(data):
 
     df = data.select_dtypes(include=['number'])
+    dty = data.dtypes.value_counts().reset_index().rename(columns={"index": "Type"})
+    data_type_counts = ", ".join([f"{row['Type']}: {row['count']}" for _, row in dty.iterrows()])
 
     # Dataset statistics
     overall_stats = {
@@ -29,7 +31,7 @@ def numerical(data):
         'Total cell size:': df.size,
         'Percentage of missing values:': (df.isna().sum().sum()/df.size)*100,
         'Number of Duplicated rows:': df.duplicated().sum(),
-        'Data Type Counts:': df.dtypes.value_counts(),
+        'Data Type Counts:': data_type_counts,
     }
 
     # Initialize the Dash app
@@ -207,21 +209,17 @@ def numerical(data):
 
         return stat, dcc.Graph(figure=fig)
 
-    # Run the app
-    if __name__ == '__main__':
-        app = numerical()
-        app.run_server(debug=True)
+
+    return app
 
 
 def categorical(data):
     df = data.select_dtypes(include=['object','category'])
-
     # Initialize the Dash app
     app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     # Dropdown options for categorical variables
-    dropdown_options = [{'label': col, 'value': col} for col in df.select_dtypes(include=['object']).columns]
-
+    dropdown_options = [{'label': col, 'value': col} for col in df.select_dtypes(include=['object','category']).columns]
     # Define the app layout
     app.layout = dbc.Container([
         dbc.Row([
@@ -229,7 +227,7 @@ def categorical(data):
                 dcc.Dropdown(
                     id='variable-dropdown',
                     options=dropdown_options,
-                    value=df.select_dtypes(include=['object']).columns[0],
+                    value=df.columns[0],
                     clearable=False,
                     className="mb-4"
                 )
@@ -271,13 +269,17 @@ def categorical(data):
         unique_count_c = len(unique_values_c)
         unique_percent_c = (len(unique_values_c) / len(data)) * 100
         missing_count_c = int(data.isna().sum())
-        missing_percentage_c = (missing_count_c / len(data)) * 100
+        missing_percentage_c = (missing_count_c / len(data)) * 100 if len(data) > 0 else 0
 
-        len_mean = float(data.str.len().mean())
-        len_sd = float(data.str.len().std())
-        len_median = int(data.str.len().median())
-        len_min = int(data.str.len().min())
-        len_max = int(data.str.len().max())
+        if data.dtype == 'object' or data.dtype.name == 'category':
+            len_mean = float(data.str.len().mean())
+            len_sd = float(data.str.len().std())
+            len_median = int(data.str.len().median())
+            len_min = int(data.str.len().min())
+            len_max = int(data.str.len().max())
+        else:
+            len_mean = len_sd = len_median = len_min = len_max = None
+
         sample_one = data.sample(frac=0.5, random_state=42, replace=True)
 
         def percentile_value(sample_one, percentile):
@@ -333,10 +335,7 @@ def categorical(data):
 
         return analysis, tables, imbalance_check
 
-    # Run the app
-    if __name__ == '__main__':
-        app = categorical()
-        app.run_server(debug=True)
+    return app
 
 
 def calculate_correlations(df):
@@ -368,3 +367,4 @@ def plot_correlation(df):
         sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap='coolwarm', cbar=True)
         plt.title(f'{method.capitalize()} Correlation Matrix')
         plt.show()
+

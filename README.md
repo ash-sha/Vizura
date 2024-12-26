@@ -27,13 +27,22 @@ pip install vizura
 
 ```python
 import vizura
-
+# Refer https://dash.plotly.com for run_server parameters
 # Example usage of vizura
 data = ...  # Load your dataset
-vizura.numerical(data) # Generates a dashboard displaying summary statistics for numerical columns in the dataset.
-vizura.categorical(data) # Displays a dashboard of summary statistics for categorical columns.
-vizura.calculate_correlations(data) # Computes correlations between filtered numerical columns using Pearson, Kendall, and Spearman methods.
-vizura.plot_correlation(data) # Visualizes the correlation matrices for Pearson, Kendall, and Spearman.
+
+#refer dash docs for run_server parameters
+
+app = numerical(data) # Generates a dashboard displaying summary statistics for numerical columns in the dataset.
+app.run_server(port=8000) # can add port number of choice, but not identical
+
+
+app = categorical(data) # Displays a dashboard of summary statistics for categorical columns.
+app.run_server(port=8001) # can add port number of choice, but not identical 
+
+calculate_correlations(data) # Computes correlations between filtered numerical columns using Pearson, Kendall, and Spearman methods.
+
+plot_correlation(data) # Visualizes the correlation matrices for Pearson, Kendall, and Spearman.
 ```
 
 For a live demo and example statistics, you can explore the demo at: [https://vizura.streamlit.app](https://vizura.streamlit.app)

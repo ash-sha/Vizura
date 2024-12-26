@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="vizura",
-    version="0.1.14",
+    version="0.1.21",
     packages=find_packages(),
     install_requires=[
         "dash",
@@ -16,7 +16,7 @@ setup(
         "scikit_learn",
         "scipy",
         "seaborn",
-        "setuptools",
+        "setuptools>=70.0.0",
         "streamlit",
     ],
     author="Aswath Shakthi",
