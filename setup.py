@@ -21,7 +21,10 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'vizura=vizura.mydashboard:main',
+            'vizura-numerical=vizura.vizura:numerical',
+            'vizura-categorical=vizura.vizura:categorical',
+            'vizura-plot_correlation=vizura.vizura:plot_correlation',
+            'vizura-calculate_correlations=vizura.vizura:calculate_correlations',
         ],
     },
     author="Aswath Shakthi",
