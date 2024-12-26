@@ -1,2 +1,5 @@
 Vizura.egg-info
 dist
+.DS_Store
+.idea
+.logs
