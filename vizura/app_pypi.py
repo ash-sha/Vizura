@@ -484,5 +484,14 @@ def main():
             "Interpretation: If the p-value is less than 0.05, the data does not follow the normal distribution. If p-value > 0.05, the data may follow the normal distribution.")
 
 if __name__ == "__main__":
-    run_dashboard(dfr)
+    sample_data = pd.DataFrame({
+        'A': [1, 2, 3, 4, 5],
+        'B': [10, 20, 30, 40, 50],
+        'C': [0.1, 0.2, 0.3, 0.4, 0.5]
+    })
+
+    # Run the dashboard with the sample data
+    run_dashboard(sample_data)
+
+    # Start the main function to display the analysis in Streamlit
     main()

@@ -2,18 +2,18 @@ from setuptools import setup, find_packages
 
 setup(
     name="Vizura",
-    version="0.1.0",
+    version="0.1.4",
     packages=find_packages(),
     install_requires=[
-        "matplotlib==3.10.0",
-        "numpy==2.2.1",
-        "pandas==2.2.3",
-        "plotly==5.24.1",
-        "scikit_learn==1.6.0",
-        "scipy==1.14.1",
-        "seaborn==0.13.2",
-        "setuptools==68.2.0",
-        "streamlit==1.41.1",
+        "matplotlib",
+        "numpy",
+        "pandas",
+        "plotly",
+        "scikit_learn",
+        "scipy",
+        "seaborn",
+        "setuptools",
+        "streamlit",
         "openpyxl"
     ],
     entry_points={
