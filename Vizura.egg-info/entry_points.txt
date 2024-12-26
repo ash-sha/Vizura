@@ -1,0 +1,2 @@
+[console_scripts]
+vizura = vizura.streamlit_app:main
