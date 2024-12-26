@@ -272,7 +272,7 @@ def main():
 
     elif analysis_type == "Categorical":
         # Select categorical columns
-        df = data.select_dtypes(include=["object", "category"])
+        df = data.select_dtypes(include=["object"])
 
         st.header("Categorical Analysis")
 
