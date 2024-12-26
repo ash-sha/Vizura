@@ -213,7 +213,7 @@ def main():
 
 
     def categorical(data):
-        df = data.select_dtypes(include=['object'])
+        df = data.select_dtypes(include=['object','category'])
 
         # Initialize the Dash app
         app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
