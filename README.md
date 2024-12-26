@@ -1,14 +1,13 @@
 # Vizura
 
-Welcome to the **Vizura** package, a comprehensive tool for analyzing and visualizing basic statistics.
 
 ![Vizura Logo](https://raw.githubusercontent.com/ash-sha/vizura/refs/heads/main/logo.png)
-# Vizura
+
 ![Build Status](https://img.shields.io/github/workflow/status/ash-sha/vizura/Python%20CI?label=build)
 ![PyPI Version](https://img.shields.io/pypi/v/vizura?logo=pypi)
 ![License](https://img.shields.io/pypi/l/vizura?logo=open-source)
 
-Vizura is a Python package for data analysis and visualization.
+Welcome to the **Vizura** package, a comprehensive tool for analyzing and visualizing basic statistics.
 
 **Vizura** is a data analysis and visualization tool developed using Python and Streamlit. It provides valuable insights into datasets by generating summary statistics and offering interactive visualizations.
 
