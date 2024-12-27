@@ -49,7 +49,7 @@ plot_correlation(data) # Visualizes the correlation matrices for Pearson, Kendal
 
 Click on the image below to view the video:
 
-[![Video Thumbnail](./path/to/thumbnail.jpg)](./path/to/your/video.mp4)
+[![Video Thumbnail](https://raw.githubusercontent.com/ash-sha/Vizura/refs/heads/main/thumbnail.png)](https://github.com/ash-sha/Vizura/raw/refs/heads/main/Package%20Demo.mov)
 
 For a live demo and example statistics, you can explore the demo at: [https://vizura.streamlit.app](https://vizura.streamlit.app)
 
