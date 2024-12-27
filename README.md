@@ -45,6 +45,12 @@ calculate_correlations(data) # Computes correlations between filtered numerical 
 plot_correlation(data) # Visualizes the correlation matrices for Pearson, Kendall, and Spearman.
 ```
 
+### Video Preview
+
+Click on the image below to view the video:
+
+[![Video Thumbnail](./path/to/thumbnail.jpg)](./path/to/your/video.mp4)
+
 For a live demo and example statistics, you can explore the demo at: [https://vizura.streamlit.app](https://vizura.streamlit.app)
 
 ## Contributing
